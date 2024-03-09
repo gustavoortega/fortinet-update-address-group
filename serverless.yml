@@ -1,0 +1,33 @@
+service: deploybot-group
+
+provider:
+  name: google
+  runtime: python39
+  project: project-gcp
+  credentials: /path/serviceaccount-key.json
+  serviceAccountEmail: serverless-deploy@project-gcps.iam.gserviceaccount.com
+
+plugins:
+  - serverless-google-cloudfunctions
+  
+package:
+  exclude:
+    - node_modules/**
+    - .gitignore
+    - .git/**
+  include:
+    - main.py
+    - requirements.txt
+
+functions:
+  deploybot-group:
+    handler: main
+    events:
+      - event:
+          eventType: google.pubsub.topic.publish
+          resource: projects/project-gcp/topics/address-deploybot
+    environment:
+      FORTINET_BASE_URL: "https://fortigate.gustavoortega.com.ar/api/v2/"
+      GROUP_NAME: "DeployBot IPv4"
+      PREFIX_NAME_OBJ: "DeployBot"
+      SECRET_NAME_APIKEY: "prod_fortinet_apikey-manage-address"
