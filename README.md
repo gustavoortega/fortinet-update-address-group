@@ -32,3 +32,37 @@ SOURCE = { "type": "url_response", "hostname": "https://www.cloudflare.com/ips-v
 Accede al artículo completo con todos los detalles para implementarlo en GCP usando serverless!
 
 https://medium.com/@gortega/introducción-ff5f969c6f58
+
+---
+
+
+# Address Group Updates in Fortinet
+This project provides a tool for the automatic management of address groups in Fortinet systems, ensuring they are up-to-date with the most recent IP addresses or hostnames. It is particularly useful in dynamic environments where the addresses of servers or services may change frequently.
+
+## Features
+- **Automation**: Synchronizes the members of an address group with the latest IP addresses or hostnames automatically.
+- **Efficient Management**: Allows the creation of address groups if they do not exist, facilitating centralized administration.
+- **Flexibility**: Supports different sources for updating addresses, including 
+DNS and URL response queries.
+
+## Use Cases
+### Case 1: Synchronization with DNS Query
+To update an address group based on the A type DNS records of a hostname, such as `servers.deploybot.com`, an approach that resolves these names to their current IP addresses can be implemented.
+
+```python
+# Example function for DNS resolution and group updating
+SOURCE = {"type": "dns", "hostname": "servers.deploybot.com"}
+```
+
+### Case 2: Synchronization with URL Response
+When the relevant IP addresses are published through an API or web service, the script can update the address group based on the response from a specific URL.
+
+```python
+# Example function to fetch IPs from a URL and update the group
+SOURCE = {"type": "url_response", "hostname": "https://www.cloudflare.com/ips-v4/#"}
+```
+
+## Configuration and Installation
+Access the full article with all the details to implement it on GCP using serverless!
+
+https://medium.com/@gortega/introduction-ff5f969c6f58
