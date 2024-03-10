@@ -65,4 +65,4 @@ SOURCE = {"type": "url_response", "hostname": "https://www.cloudflare.com/ips-v4
 ## Configuration and Installation
 Access the full article with all the details to implement it on GCP using serverless!
 
-https://medium.com/@gortega/introduction-ff5f969c6f58
+https://gortega.medium.com/automate-ip-address-objects-updating-in-fortinet-using-gcp-python-and-serverless-49b67028c3db
