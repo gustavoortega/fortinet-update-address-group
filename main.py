@@ -161,8 +161,6 @@ def eliminar_objeto_address(nombre_objeto):
     except Exception as e:
         print(f"Error al eliminar el objeto de dirección {nombre_objeto}: {e}")
 
-# Asegúrate de que la función main llame correctamente a las funciones necesarias.
-
 
 def main(event, context):
     
