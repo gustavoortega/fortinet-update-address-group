@@ -14,6 +14,7 @@ PREFIX_NAME_OBJ = os.getenv('PREFIX_NAME_OBJ', "CloudFlare")
 VERIFY_SSL = False
 GCP_PROJECT = os.getenv('GCP_PROJECT', "fortinet-scripts")
 SOURCE = os.getenv('SOURCE', { "type": "url_response", "hostname": "https://www.cloudflare.com/ips-v4/#"})
+SOURCE = json.loads(SOURCE)
 SECRET_NAME_APIKEY = os.getenv('SECRET_NAME_APIKEY', "prod_fortinet_apikey-manage-address")
 
 
@@ -160,6 +161,8 @@ def eliminar_objeto_address(nombre_objeto):
         print(f"Objeto de dirección eliminado: {nombre_objeto}")
     except Exception as e:
         print(f"Error al eliminar el objeto de dirección {nombre_objeto}: {e}")
+
+# Asegúrate de que la función main llame correctamente a las funciones necesarias.
 
 
 def main(event, context):

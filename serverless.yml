@@ -31,3 +31,4 @@ functions:
       GROUP_NAME: "DeployBot IPv4"
       PREFIX_NAME_OBJ: "DeployBot"
       SECRET_NAME_APIKEY: "prod_fortinet_apikey-manage-address"
+      SOURCE: '{ "type": "url_response", "hostname": "https://www.cloudflare.com/ips-v4/#"}'
